@@ -20,6 +20,11 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # 主页
-    url(r'^$', 'mark.views.homepage'),
-    #
+    url(r'^$', 'mark.views.index', name='index'),
+    # /markbookDIR/
+    url(r'^markbookdir/$', 'mark.views.showDIR', name='markbookdir'),
+    # /markbook/()/  ---------------()括号中的值被传递到views下面的函数中
+    url(r'^markbook/(.*)', 'mark.views.showmarkbooklist', name='markbook'),
+    # /markbook/()/detail
+    url(r'^markbook/(.*)/detail/$', 'mark.views.showmarkbookdetail', name='markbookDetail'),
 ]
