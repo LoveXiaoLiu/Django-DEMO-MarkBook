@@ -16,6 +16,13 @@ class markbookDIR(models.Model):
     def __str__(self):
         return self.dir_name
 
+    # 给这个类增加一个详细的名称
+    class Meta:
+        verbose_name = '书签夹'
+        verbose_name_plural = '书签夹'
+        ordering = ['dir_name']              # 排序
+
+
 
 class markbook(models.Model):
     mark_name = models.CharField('书签名', max_length=100, unique=True)
@@ -25,3 +32,8 @@ class markbook(models.Model):
 
     def __str__(self):
         return self.mark_name
+
+    # 给这个类增加一个详细的名称
+    class Meta:
+        verbose_name = '书签'
+        verbose_name_plural = '书签'
