@@ -23,8 +23,8 @@ urlpatterns = [
     url(r'^$', 'mark.views.index', name='index'),
     # /markbookDIR/
     url(r'^markbookdir/$', 'mark.views.showDIR', name='markbookdir'),
-    # /markbook/()/  ---------------()括号中的值被传递到views下面的函数中
-    url(r'^markbook/(.*)', 'mark.views.showmarkbooklist', name='markbook'),
     # /markbook/()/detail
-    url(r'^markbook/(.*)/detail/$', 'mark.views.showmarkbookdetail', name='markbookDetail'),
+    url(r'^markbook/(.*)/detail/', 'mark.views.showmarkbookdetail', name='markbookDetail'),          # url 匹配时由上到下的
+    # /markbook/()/  ---------------()括号中的值被传递到views下面的函数中
+    url(r'^markbook/(.*)/$', 'mark.views.showmarkbooklist', name='markbook'),
 ]

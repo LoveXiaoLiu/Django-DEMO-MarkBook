@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>书签夹</title>
+<title>{{dir_i}}书签</title>
 </head>
 <body>
 <div id="top" style="margin:0 auto; padding:0px; height:64px">
@@ -11,7 +11,7 @@
 <div id="left_left" align="left" style="height:700px;float:left;width:20px;">
 </div>
 <p>
-<a href='/'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;书签夹</a>&nbsp;>&nbsp;
+<a href='/'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;书签夹</a>&nbsp;>&nbsp;&nbsp;{{dir_i}}
 <li style="list-style:none;">
 </li>
 <li style="list-style:none;">
@@ -55,23 +55,36 @@
 <th scope="col"  class="column_task">
 <div class="text" align="left">
 <span>
-书签文件夹列表
-<a href="/log/ngfw/ngfw_qa/addTask/" style="text-decoration:none">
+{{dir_i}}书签:{{markB.mark_name}}
 </span>
 </div>
 </th>
 </tr>
 </thead>
-{% for task in mbDirList %}
 <tr class="row">
 <td class="action-checkbox" height="20"></td>
 <td align="left">
-<a href="/markbook/{{task.dir_name}}/" style="text-decoration:none">
-{{task.dir_name}}
-</a>
+书签名称：{{markB.mark_name}}
 </td>
 </tr>
-{% endfor %}
+<tr class="row">
+<td class="action-checkbox" height="20"></td>
+<td align="left">
+书签URl：{{markB.mark_url}}
+</td>
+</tr>
+<tr class="row">
+<td class="action-checkbox" height="20"></td>
+<td align="left">
+书签夹：{{markB.mark_belong}}
+</td>
+</tr>
+<tr class="row">
+<td class="action-checkbox" height="20"></td>
+<td align="left">
+创建时间：{{markB.create_time}}
+</td>
+</tr>
 </tbody>
 <tr>
 <td>
